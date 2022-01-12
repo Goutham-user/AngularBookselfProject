@@ -1,0 +1,36 @@
+<app-header></app-header>
+
+<div class="middle" fxLayout="row wrap" fxLayoutAlign="space-between center">
+    <div>
+        <span>Books</span>
+        <span class="item">(128 items)</span>
+    </div>
+    <!-- <button>add book</button> -->
+    <mat-form-field appearance="fill">
+        <mat-label>sort by relevence</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let food of foods" [value]="food.value">
+            {{food.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      
+</div>
+<div class="maincontaintentItem" fxLayout="row wrap" fxLayoutAlign="space-around center">
+    <div class="card" *ngFor = "let book of bookArray">
+        <div class="card1" fxLayout="row" fxLayoutAlign="space-around start">
+            <img class="img1" src="../../../assets/bookimg/book8.png">
+        </div>
+        <br>
+        <span class="data1">{{book.bookName}}</span><br>
+        <span class="data2">{{book.author}}</span><br>
+        <span class="data1">{{book.price}}</span><br>
+        <div class="centerbutton" fxLayout="row" fxLayoutAlign="space-between center">
+            <button (click)="addbag(book)" type="button">ADDBAG</button>
+            <button type="button" class="button2">WISHLIST</button>
+        </div>
+    </div>
+</div>
+    
+
+<app-footer></app-footer>
